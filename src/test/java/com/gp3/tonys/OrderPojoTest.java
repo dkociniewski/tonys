@@ -1,22 +1,23 @@
 package com.gp3.tonys;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.gp3.tonys.models.Order;
-import com.gp3.tonys.models.OrderItem;
-import com.gp3.tonys.models.Product;
+import com.gp3.tonys.db.entity.Order;
+import com.gp3.tonys.db.entity.OrderItem;
+import com.gp3.tonys.db.entity.Product;
 
-public class OrderPojoTest {
+class OrderPojoTest {
     @Test
-    public void create() {
+    void create() {
         Order order = new Order("1");
         assertTrue(order.getOrderItems().isEmpty());
 
-        Product fishAndChips = new Product("1",
+        Product fishAndChips = new Product("F_C",
                 "Fish And Chips",
                 "Traditional Irish Fish and Chips",
                 "4.90");

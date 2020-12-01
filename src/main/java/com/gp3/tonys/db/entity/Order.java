@@ -1,18 +1,17 @@
-package com.gp3.tonys.models;
+package com.gp3.tonys.db.entity;
 
-import java.lang.annotation.Documented;
 import java.util.Collections;
 import java.util.List;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Data
-@Document
-public class Order {
+public class Order implements Entity{
+    @Id
     private String id;
 
     private List<OrderItem> orderItems;
